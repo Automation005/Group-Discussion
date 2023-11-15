@@ -15,7 +15,7 @@ public class Costco_WebElement {
 	public WebDriver driver;
 	
 	@Test 
-	public void webElement () {
+	public void webElement () throws InterruptedException {
 		 driver = new ChromeDriver();
 		 driver.manage().window().maximize();
 		 driver.get("https://www.costco.com/");
@@ -35,6 +35,7 @@ public class Costco_WebElement {
 		 link201.click(); // open one of the links 
 		 
 		 // verification of certain Elemenet in new page 
+		 Thread.sleep(2000);
 		 
 		  String ActualDisplayMessage = driver.findElement(By.cssSelector("div[class='eco-ks-hero-container'] h1")).getText();
 		  String expectedDisplayMessage = "Kirkland Signature means quality and value.";
