@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,7 +17,7 @@ public class Swag_Labs {
 	SoftAssert softassert = new SoftAssert();//create the object of the soft assert class
 	public ChromeOptions options;
 	@BeforeMethod
-	public void setup() {
+	public void setup00() {
 		driver= new ChromeDriver();   //create object of my ChromeDriver  // abstract method of WebDriver
 		driver.manage().deleteAllCookies(); // use refrence driver to call those abstract methods
 		//options.addArguments("--remote-debugging-port=9222"); 
@@ -34,8 +35,7 @@ public class Swag_Labs {
 	    driver.findElement(By.cssSelector("input#user-name")).sendKeys("standard_user");
 	    driver.findElement(By.cssSelector("input#password")).sendKeys("secret_sauce");
 	    driver.findElement(By.cssSelector("input#login-button")).click();
-	    softassert .assertTrue(driver.findElement(By.cssSelector("span.title")).isDisplayed());
-	    softassert.assertAll();	
+	    Assert.assertTrue(driver.findElement(By.cssSelector("span.title")).isDisplayed());
 	    driver.findElement(By.xpath("//div[text()='Sauce Labs Backpack']")).click();
 	    
 	   String actualtextbox = driver.findElement(By.cssSelector("button#add-to-cart-sauce-labs-backpack")).getText();
@@ -77,7 +77,7 @@ public class Swag_Labs {
 	
 	@AfterMethod
 	public void tearDown() {
-	//driver.quit();	
+	driver.quit();	
 	}
 	
 

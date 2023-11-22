@@ -3,12 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.Webelement.Costco_WebElement">
+      <class name="com.ReadFromProperties_File.Login_SwagLabs">
         <methods>
-          <include name="webElement"/>
+          <include name="signWithValidUserNameAndInvalidPassword"/>
+          <include name="signWithInValidUserNameAndInvalidPassword"/>
+          <include name="singInWithoutCredintials"/>
+          <include name="signWithInValidUserNameAndValidPassword"/>
           <include name="tearDown"/>
+          <include name="signWithValidUserNameAndValidPassword"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- com.Webelement.Costco_WebElement -->
+      </class> <!-- com.ReadFromProperties_File.Login_SwagLabs -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
